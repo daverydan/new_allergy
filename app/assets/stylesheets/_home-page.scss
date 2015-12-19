@@ -1,0 +1,33 @@
+// Jumbotron
+.jumbotron {
+	position: relative;
+	padding: 48px 20px;
+	background-image: url(image-path('food-allergy-30.png'));
+	background-repeat: no-repeat;
+	background-position: bottom center;
+	background-size: cover;
+	height: 425px;
+	margin-bottom: 0 !important;
+	h1 {
+		color: #fff;
+		z-index: 3;
+	}
+	p {
+		color: #fff;
+	}
+}
+
+// Info Box
+.home-info-box {
+	padding: 50px 0 0;
+	text-align: center;
+}
+
+.home-info-box__description {
+	line-height: 26px;
+	margin-bottom: 15px;
+}
+
+.text-align__center {
+	text-align: center;
+}

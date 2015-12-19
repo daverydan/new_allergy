@@ -1,0 +1,39 @@
+<div class="container">
+	<div class="row">
+		<h1><%= @user.first_name %>'s Meal</h1>
+		<%= link_to 'Back to Menu Items', {:controller=>"meals", action: "show", :id => @menu_item.meal[:id] }, class: "btn btn-primary" %>
+		<hr>
+
+		<div class="col-sm-4 time-meal">
+			<h3>Meal:</h3>
+			<p><%= @menu_item.meal.name %></p>
+			<p>Added: <%= @menu_item.meal.created_at.strftime("%-m/%-d/%y") %> @ <%= @menu_item.meal.created_at.strftime("%H:%M") %></p>
+			<h3>Menu Item:</h3>
+			<p><%= @menu_item.name %></p>
+			<p>Added: <%= @menu_item.created_at.strftime("%-m/%-d/%y") %> @ <%= @menu_item.created_at.strftime("%H:%M") %></p>
+		</div>
+
+	<div class="col-sm-8 menu-items">
+		<h4 class="menu-items__header">Ingredient(s)</h4>
+		<%= link_to "+ Add", new_ingredient_path, class: "btn btn-primary menu-items__add-link", remote: true %>
+		<hr>
+		<% @ingredient.each do |mi| %>
+			<div class="col-xs-9 menu-item">
+				<p class="text-align__left"><%= link_to "#{mi.name}", ingredient_path(mi) %></p>
+			</div>
+			<div class="col-xs-3 menu-item__action">
+			<ul>
+				<li>
+					<%= link_to "", edit_ingredient_path(mi), class: "glyphicon glyphicon-edit", remote: true %>
+				</li>
+				<li class="text-align__right">
+					<%= link_to "", ingredient_path(mi), class: "glyphicon glyphicon-remove", method: :delete, data: { confirm: "Are you sure?" } %>
+				</li>
+			</ul>
+			</div>
+		<% end %>
+	</div>
+	
+	</div>
+	
+</div><!-- container -->

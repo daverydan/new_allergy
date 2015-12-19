@@ -1,0 +1,34 @@
+<div class="container">
+	<div class="row">
+		<h1><%= @meals.user.first_name %>'s Meal</h1>
+		<%= link_to 'Back to Meal List', user_path(1), class: "btn btn-primary" %>
+	</div>
+
+	<div class="row">
+		<hr>
+		<div class="col-sm-4 time-meal">
+			<h4><%= @meals.created_at.strftime("%-m/%-d/%y") %> @ <%= @meals.created_at.strftime("%H:%M") %></h4>
+			<h3><%= @meals.name %></h3>
+		</div>
+		<div class="col-sm-8 menu-items">
+			<h4 class="menu-items__header">Menu Item(s)</h4>
+			<%= link_to "+ Add", new_menu_item_path, class: "btn btn-primary menu-items__add-link", remote: true %>
+			<hr>
+			<% @menuItem.each do |mi| %>
+				<div class="col-xs-9 menu-item">
+					<p class="text-align__left"><%= link_to "#{mi.name}", menu_item_path(mi) %></p>
+				</div>
+				<div class="col-xs-3 menu-item__action">
+				<ul>
+					<li>
+						<%= link_to "", edit_menu_item_path(mi), class: "glyphicon glyphicon-edit", remote: true %>
+					</li>
+					<li class="text-align__right">
+						<%= link_to "", menu_item_path(mi), class: "glyphicon glyphicon-remove", method: :delete, data: { confirm: "Are you sure?" } %>
+					</li>
+				</ul>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div><!-- container -->

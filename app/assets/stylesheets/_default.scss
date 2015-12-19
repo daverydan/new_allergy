@@ -1,0 +1,62 @@
+body {
+	background-color: #333;
+	padding-top: 78px;
+}
+
+.content {
+	background-color: #FFF;
+	padding-bottom: 50px;
+}
+
+// Title Tags
+h1 {
+	font-size: 3em;
+	letter-spacing: .03em;
+	text-align: center;
+}
+
+h2 {
+	font-size: 2.5em;
+	margin-bottom: 30px;
+	text-align: center;
+	font-weight: normal;
+	color: #777;
+}
+
+h3 {
+	font-size: 2em;
+}
+
+.text-align__left {
+	text-align: left;
+}
+
+.text-align__right {
+	text-align: right;
+}
+
+// Forms
+input, textarea, select, .uneditable-input {
+	border: 1px solid #d2d2d2;
+	border-radius: 5px;
+	width: 100%;
+	margin-bottom: 15px;
+}
+
+input {
+	height: 40px;
+	padding: 0 10px;
+}
+
+input, textarea {
+	padding: 10px;
+
+}
+
+.alert {
+	margin-top: 10px;
+}
+
+.close {
+	line-height: 12px;
+}

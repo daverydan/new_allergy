@@ -1,0 +1,11 @@
+<div class="modal-wrap">
+	<h3>Edit Meal</h3>
+	<%= form_for @meal do |f| %>
+		<p>
+			<%= f.label :name %>
+			<%= f.text_field :name %>
+		</p>
+
+		<p><%= f.submit %></p>
+	<% end %>
+</div>

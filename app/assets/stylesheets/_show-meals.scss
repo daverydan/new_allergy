@@ -1,0 +1,52 @@
+.time-meal {
+	h3 {
+		border-bottom: 1px solid #000;
+		padding-bottom: 30px;
+		margin-bottom: 30px;
+		@media only screen and (min-width : 767px) {
+			border-bottom: 0;
+			margin-bottom: 0;
+			padding-bottom: 0;
+			line-height: 38px;
+	    }
+	}
+}
+
+.menu-items {
+	h4 {
+		float: left;
+	}
+	.col-sm-4 {
+		padding-left: 0;
+	}
+	hr {
+		clear: both;
+	}
+	p {
+		line-height: 30px;
+	}
+}
+
+.menu-items__add-link {
+	float: right;
+	margin: 5px 0 15px;
+}
+
+.menu-item__action {
+	ul {
+		margin: 0;
+		padding: 0;
+		line-height: 30px;
+		float: right;
+		li {
+			display: inline-block;
+			a {
+				margin-left: 10px;
+				text-decoration: none;
+				&:hover {
+
+				}
+			}
+		}
+	}
+}

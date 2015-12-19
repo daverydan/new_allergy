@@ -1,0 +1,26 @@
+.modal-wrap {
+	h3 {
+		margin-top: 0;
+		text-align: center;
+	}
+	position: absolute;
+	background: #FFF;
+	border-radius: 5px;
+	left: 50%;
+	padding: 30px;
+	top: 20%;
+	transform: translateX(-50%);
+	width: 80%;
+	@media only screen and (min-width : 767px) {
+		width: 50%;
+	}
+	form {
+		input[type=submit] {
+			background: #777;
+			color: #fff;
+			&:hover {
+				background: #999;
+			}
+		}
+	}
+}

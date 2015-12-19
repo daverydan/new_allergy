@@ -1,0 +1,14 @@
+<div class="container">
+<h1>Account Info</h1>
+<%= link_to 'Home', "/", class: "btn btn-primary" %>
+<h3>User(s)</h3>
+<hr>
+<% @user.each do |u| %>
+	<div class="user">
+		<ul>
+			<li><h4><%= link_to "#{u.first_name} #{u.last_name}", user_path(u) %></h4></li>
+			<li><%= u.email %></li>
+		</ul>
+	</div>
+<% end %>
+</div>

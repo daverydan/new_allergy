@@ -1,0 +1,27 @@
+<div class="meals container">
+<h1><%= link_to "#{@user.first_name} #{@user.last_name}", user_path(1) %></h1>
+<%= link_to 'Back to Users', users_path, class: "btn btn-primary" %>
+<div style="clear: both;"></div>
+<h3 style="float: left;">Meal(s)</h3>
+<div style="float: right; display: inline-block; margin-top: 20px;"><%= link_to "+ Add", new_meal_path, class: "btn btn-primary", remote: true %></div>
+<div style="clear: both;"></div>
+	<% @meals.each do |m| %>
+		<hr style="clear: both;">
+		<ul>
+			<li>
+				<h4>
+					<%= link_to "#{m.name}", meal_path(m.id) %>
+
+					<span style="display: inline-block; margin-left: 20px;"></span> 
+
+					<%= link_to "", edit_meal_path, class: "glyphicon glyphicon-edit", remote: true %> 
+					<span style="display: inline-block;"></span> 
+					
+					<%= link_to "", meal_path(m), class: "glyphicon glyphicon-remove", method: :delete, data: { confirm: "Are you sure?" } %>
+				</h4>
+
+				<p><span class="quiet"><small><%= time_ago_in_words(m.created_at) %> ago</small></span></p>
+			</li>
+		</ul>
+	<% end %>
+</div>
